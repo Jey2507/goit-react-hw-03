@@ -2,18 +2,16 @@ import { RiContactsFill } from "react-icons/ri";
 import { FaPhoneAlt } from "react-icons/fa";
 import css from "../Contact/Contact.module.css";
 
-export default function Contact({contacts, onDelete}) {
+export default function Contact({contacts:{name, number, id}, onDelete}) {
     return (
         <>
-        {contacts.map(contact => (
-            <li className={css.item} key={contact.id}>
+            <li className={css.item} >
                 <div className={css.contact}>
-                    <h3 className={css.name}><RiContactsFill /> {contact.name}</h3>
-                    <p className={css.descr}><FaPhoneAlt /> {contact.number}</p>
+                    <h3 className={css.name}><RiContactsFill /> {name}</h3>
+                    <p className={css.descr}><FaPhoneAlt /> {number}</p>
                 </div>    
-                <button className={css.button} onClick={() => onDelete(contact.id)}>Delete</button>
+                <button className={css.button} onClick={() => onDelete(id)}>Delete</button>
             </li>
-        ))}
         </>
     );
 }

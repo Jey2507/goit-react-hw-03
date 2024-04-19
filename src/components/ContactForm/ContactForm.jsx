@@ -15,7 +15,7 @@ const initialValues = {
     number: "",
 }
 
-export default function SearchBox({onAdd}) {
+export default function ContactForm({onAdd}) {
     const nameId = useId();
     const numberId = useId();
 
